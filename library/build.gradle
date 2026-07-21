@@ -1,8 +1,9 @@
 apply plugin: 'com.android.library'
 
 android {
+    namespace "com.timehop.stickyheadersrecyclerview"
+
     compileSdkVersion rootProject.ext.compileSdkVersion as Integer
-    buildToolsVersion rootProject.ext.buildToolsVersion as String
 
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion as Integer
@@ -11,17 +12,17 @@ android {
         versionName rootProject.ext.versionName as String
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
     }
 }
 
 dependencies {
-    compile 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.4.0'
 }
 
-apply from: 'gradle-maven-push.gradle'
+//apply from: 'gradle-maven-push.gradle'
 
-afterEvaluate {
-    androidJavadocs.classpath += project.android.libraryVariants.toList().first().javaCompile.classpath
-}
+//afterEvaluate {
+//    androidJavadocs.classpath += project.android.libraryVariants.toList().first().javaCompile.classpath
+//}

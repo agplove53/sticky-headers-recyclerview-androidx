@@ -1,3 +1,4 @@
+(This is the same code from the upstream repo, but updated to use the androidx libraries + increase compileSdkVersion = 36)
 (This is the same code from the upstream repo, but updated to use the androidx libraries + increase compileSdkVersion)
 
 sticky-headers-recyclerview-androidx

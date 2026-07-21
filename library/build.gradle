@@ -40,8 +40,8 @@ afterEvaluate {
             release(MavenPublication) {
                 from components.release
                 groupId = 'com.github.agplove53'
-                artifactId = 'sticky-headers-recyclerview-androidx'
-                version = '1.0.1'
+                artifactId = 'library'
+                version = '0.6.0'
             }
         }
     }

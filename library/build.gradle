@@ -15,6 +15,12 @@ android {
         sourceCompatibility JavaVersion.VERSION_21
         targetCompatibility JavaVersion.VERSION_21
     }
+
+    publishing {
+        singleVariant('release') {
+            withSourcesJar() // 선택 사항: 소스 코드 JAR도 함께 배포하고 싶을 때
+        }
+    }
 }
 
 dependencies {
@@ -26,3 +32,17 @@ dependencies {
 //afterEvaluate {
 //    androidJavadocs.classpath += project.android.libraryVariants.toList().first().javaCompile.classpath
 //}
+apply plugin: 'maven-publish'
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.agplove53'
+                artifactId = 'library'
+                version = '1.0.1'
+            }
+        }
+    }
+}
